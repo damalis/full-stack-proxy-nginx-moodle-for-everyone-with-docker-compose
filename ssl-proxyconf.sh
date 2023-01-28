@@ -12,7 +12,7 @@ fi
 
 use_lets_encrypt_certificates() {
 	echo "switching nginx to use Let's Encrypt certificate for $1"	
-	sed '/#location.\/./,/#}/ s/#//; s/#listen/listen/g; s/#ssl_/ssl_/g' $3/conf.d/default.conf > $3/conf.d/default.conf.bak
+	sed '/#location.\/./,/#}/ s/#//; s/#listen/listen/g; s/#ssl_/ssl_/g; s/#server_name/server_name/' $3/conf.d/default.conf > $3/conf.d/default.conf.bak
 }
 
 reload_proxy() {
@@ -24,14 +24,14 @@ reload_proxy() {
 
 wait_for_lets_encrypt() {
 	if [ -d "$2/live/$1" ]; then
-		break 
+		break
 	else
 		until [ -d "$2/live/$1" ]; do
 			echo "waiting for Let's Encrypt certificates for $1"
 			sleep 5s & wait ${!}
 			if [ -d "$2/live/$1" ]; then break; fi
 		done
-	fi;	
+	fi;
 	use_lets_encrypt_certificates "$1" "$2" "$3"
 	reload_proxy "$3"
 }
