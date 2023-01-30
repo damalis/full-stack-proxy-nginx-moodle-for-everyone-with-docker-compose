@@ -214,16 +214,7 @@ docker compose up -d
 
 ### Website
 
-You should see the "Home" page in your browser. If not, please check if your PHP installation satisfies Moodle's requirements or 
-
-to solve error "err_too_many_redirects":
-
-```
-$CFG->reverseproxy = true;
-$CFG->sslproxy = true;
-```
-
-add the above code in the ```./moodle/moodle/config.php``` file.
+You should see the "Home" page in your browser. If not, please check if your PHP installation satisfies Moodle's requirements.
 
 ```
 https://example.com
