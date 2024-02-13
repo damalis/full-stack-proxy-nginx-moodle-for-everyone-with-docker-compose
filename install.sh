@@ -488,7 +488,7 @@ if [ -x "$(command -v docker)" ] && [ "$(docker compose version)" ]; then
 	fi
 else
 	echo ""
-    echo "not found docker and/or docker compose, Install docker and/or docker compose" >&2
+	echo "not found docker and/or docker compose, Install docker and/or docker compose" >&2
 	echo ""
 	exit 1
 fi
