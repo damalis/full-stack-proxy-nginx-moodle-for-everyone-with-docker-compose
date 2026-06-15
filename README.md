@@ -56,7 +56,7 @@ Plus, manage docker containers with Portainer.
 - [phpMyAdmin](https://hub.docker.com/r/phpmyadmin/phpmyadmin/)
 - [Mariadb](https://hub.docker.com/_/mariadb) [Mysql](https://hub.docker.com/_/mysql)
 - [redis](https://hub.docker.com/_/redis)
-- [mailhog](https://github.com/mailhog)
+- [MailHog](https://github.com/mailhog)
 - [backup](https://hub.docker.com/r/offen/docker-volume-backup)
 
 #### For certbot (letsencrypt) certificate:
